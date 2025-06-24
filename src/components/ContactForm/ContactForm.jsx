@@ -2,8 +2,8 @@ import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectContacts } from '../redux/contactsSlice';
-import { addContact } from '../redux/contactsOps';
+import { selectContacts } from '../redux/contacts/slice';
+import { addContact } from '../redux//auth/operations';
 // import { nanoid } from "nanoid";
 
 const ContactForm = () => {

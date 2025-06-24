@@ -1,9 +1,9 @@
 import React from 'react';
 import Contact from '../Contact/Contact';
 import { useSelector } from 'react-redux';
-import { selectContacts } from '../redux/contactsSlice';
+import { selectContacts } from '../redux/contacts/slice';
 // import { selectFilteredContacts } from '../redux/contactsSlice';
-import { selectNameFilter } from '../redux/filtersSlice';
+import { selectNameFilter } from '../redux/filters/slice';
 // import { nanoid } from "nanoid";
 
 const ContactList = ({ onDelete }) => {
