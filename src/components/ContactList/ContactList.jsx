@@ -1,7 +1,7 @@
 import React from 'react';
 import Contact from '../Contact/Contact';
 import { useSelector } from 'react-redux';
-import { selectContacts } from '../redux/contacts/slice';
+import { selectContacts } from '../redux/contacts/selectors';
 // import { selectFilteredContacts } from '../redux/contactsSlice';
 import { selectNameFilter } from '../redux/filters/slice';
 // import { nanoid } from "nanoid";

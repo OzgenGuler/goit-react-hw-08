@@ -1,12 +1,11 @@
-import { NavLink } from 'react-dom/client';
+// src/components/AuthNav.jsx
+import { NavLink } from 'react-router-dom';
 
-const AuthNav = () => {
+export default function AuthNav() {
   return (
-    <nav style={{ display: 'flex', gap: '10px' }}>
+    <nav>
       <NavLink to="/register">Register</NavLink>
-      <NavLink to="/login">Login</NavLink>
+      <NavLink to="/login">Log In</NavLink>
     </nav>
   );
-};
-
-export default AuthNav;
+}

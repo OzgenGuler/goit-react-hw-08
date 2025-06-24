@@ -61,28 +61,30 @@ const contactsSlice = createSlice({
         state.loading = false;
         state.error = null;
       });
-    // addContact: {
-    //   reducer(state, action) {
-    //     state.items.push(action.payload);
-    //   },
-    //   prepare(contact) {
-    //     return {
-    //       payload: {
-    //         id: nanoid(),
-    //         // name: name || "",
-    //         // number: number || "",
-    //         ...contact,
-    //       },
-    //     };
-    //   },
   },
+  // addContact: {
+  //   reducer(state, action) {
+  //     state.items.push(action.payload);
+  //   },
+  //   prepare(contact) {
+  //     return {
+  //       payload: {
+  //         id: nanoid(),
+  //         name: name || '',
+  //         number: number || '',
+  //         ...contact,
+  //       },
+  //     };
+  //   },
+  // },
 
   // deleteContact(state, action) {
   //   state.items = state.items.filter(contact => contact.id !== action.payload);
   // },
 });
+
 export const contactsReducer = contactsSlice.reducer;
-// export const { addContact, deleteContact } = contactsSlice.actions;
+// // export const { addContact, deleteContact } = contactsSlice.actions;
 // export const selectContacts = state => state.contacts.items;
 // export const selectLoading = state => state.contacts.loading;
 // export const selectError = state => state.contacts.error;
@@ -94,4 +96,4 @@ export const contactsReducer = contactsSlice.reducer;
 //     );
 //   },
 // );
-// export default contactsSlice.reducer;
+export default contactsSlice.reducer;
