@@ -12,8 +12,11 @@ const AppBar = () => {
       style={{
         display: 'flex',
         justifyContent: 'space-between',
-        padding: '10px 20px',
+        gap: '50px',
+        alignItems: 'center',
+        padding: '20px 40px',
         backgroundColor: '#f0f0f0',
+        boxShadow: '0 20px 10px #fffff',
       }}
     >
       <Navigation />

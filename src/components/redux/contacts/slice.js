@@ -46,7 +46,7 @@ const contactsSlice = createSlice({
         state.error = null;
       })
       .addCase(deleteContact.fulfilled, (state, action) => {
-        state.loading = true;
+        // state.loading = true;
         state.items = state.items.filter(
           contact => contact.id !== action.payload,
         );
@@ -96,4 +96,4 @@ export const contactsReducer = contactsSlice.reducer;
 //     );
 //   },
 // );
-export default contactsSlice.reducer;
+// export default contactsSlice.reducer;

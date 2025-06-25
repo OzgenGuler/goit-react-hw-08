@@ -49,8 +49,8 @@ function App() {
     dispatch(addContact({ name, number }));
   };
 
-  const handleDeleteContact = contact => {
-    dispatch(deleteContact(contact));
+  const handleDeleteContact = id => {
+    dispatch(deleteContact(id));
   };
 
   const handleFilterChange = e => {
@@ -63,18 +63,17 @@ function App() {
       contact.name.toLowerCase().includes(filter.toLowerCase()),
   );
   // console.log(contacts);
-
+  // if (isRefreshing) {
+  //   // return <p>Refreshing user...</p>;
+  // }
   return isRefreshing ? (
     <div className={CSS.App}>
       <h1>Phonebook</h1>
       <ContactForm onAddContact={handleAddContact} />
       <SearchBox value={filter} onChange={handleFilterChange} />
       <ContactList onDelete={handleDeleteContact} />
-      <ContactList
-        contacts={filteredContacts}
-        onDelete={handleDeleteContact}
-      />{' '}
-      {isRefreshing && <p>Refreshing user ..</p>}
+      <ContactList contacts={filteredContacts} onDelete={handleDeleteContact} />
+      {/* {isRefreshing && <p>Refreshing user ..</p>} */}
     </div>
   ) : (
     <Routes>
@@ -83,22 +82,25 @@ function App() {
         <Route
           path="/login"
           element={
-            <RestrictedRoute redirectTo="/contacts" component={<Login />} />
+            <RestrictedRoute redirectTo="/contacts">
+              <Login />
+            </RestrictedRoute>
           }
         />
         <Route
           path="/register"
           element={
-            <RestrictedRoute
-              redirectTo="/contacts"
-              component={<Registration />}
-            />
+            <RestrictedRoute redirectTo="/contacts">
+              <Registration />
+            </RestrictedRoute>
           }
         />
         <Route
           path="/contacts"
           element={
-            <PrivateRoute redirectTo="/login" component={<Contacts />} />
+            <PrivateRoute redirectTo="/login">
+              <Contacts />
+            </PrivateRoute>
           }
         />
         <Route path="*" element={<Home />} />

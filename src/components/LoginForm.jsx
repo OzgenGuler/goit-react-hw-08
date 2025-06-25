@@ -22,7 +22,7 @@ const LoginForm = () => {
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <div>
+      <div style={{ marginBottom: '10px' }}>
         <label>Email:</label>
         <input
           name="email"
@@ -35,7 +35,7 @@ const LoginForm = () => {
         )}
       </div>
 
-      <div>
+      <div style={{ marginBottom: '10px' }}>
         <label>Password:</label>
         <input
           name="password"

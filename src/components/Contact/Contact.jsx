@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 // import { useDispatch } from "react-redux";
 // import { deleteContact } from "../redux/contactsSlice";
 
@@ -8,12 +8,12 @@ const Contact = ({ contact: { name, number }, onDelete }) => {
   return (
     <div
       style={{
-        border: "1px solid #ccc",
-        padding: "10px",
-        marginBottom: "10px",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
+        border: '1px solid #ccc',
+        padding: '10px',
+        marginBottom: '10px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
       }}
     >
       <div>

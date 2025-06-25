@@ -8,7 +8,7 @@ const UserMenu = () => {
 
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-      <p style={{ margin: 0 }}>Welcome, {user.name}</p>
+      <p style={{ margin: '10px', color: 'black' }}>Welcome, {user.name}</p>
       <button onClick={() => dispatch(logOut())}>Logout</button>
     </div>
   );

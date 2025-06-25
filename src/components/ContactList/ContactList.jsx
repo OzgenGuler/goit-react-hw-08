@@ -1,25 +1,26 @@
 import React from 'react';
 import Contact from '../Contact/Contact';
 import { useSelector } from 'react-redux';
-import { selectContacts } from '../redux/contacts/selectors';
-// import { selectFilteredContacts } from '../redux/contactsSlice';
-import { selectNameFilter } from '../redux/filters/slice';
+// import { selectContacts } from '../redux/contacts/selectors';
+import { selectFilteredContacts } from '../redux/contacts/selectors';
+// import { selectNameFilter } from '../redux/filters/slice';
 // import { nanoid } from "nanoid";
 
 const ContactList = ({ onDelete }) => {
+  const filteredContacts = useSelector(selectFilteredContacts);
   // const dispatch = useDispatch();
-  const contacts = useSelector(selectContacts);
-  const filter = useSelector(selectNameFilter);
+  // const contacts = useSelector(selectContacts);
+  // const filter = useSelector(selectNameFilter);
 
   // const ContactList = ({ onDelete }) => {
   //   const filteredContacts = useSelector(selectFilteredContacts);
 
-  const normalizedFilter = filter.toLowerCase();
-  const filteredContacts = contacts.filter(
-    contact =>
-      typeof contact.name === 'string' &&
-      contact.name.toLowerCase().includes(normalizedFilter),
-  );
+  // const normalizedFilter = filter.toLowerCase();
+  // // // const filteredContacts = contacts.filter(
+  //   contact =>
+  //     typeof contact.name === 'string' &&
+  //     contact.name.toLowerCase().includes(normalizedFilter),
+  // // );
   return (
     <ul style={{ paddingLeft: 0, listStyle: 'none' }}>
       {filteredContacts.map(contact => (
