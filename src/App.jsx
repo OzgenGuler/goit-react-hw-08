@@ -57,11 +57,11 @@ function App() {
     dispatch(changeFilter(e.target.value));
   };
 
-  const filteredContacts = contacts.filter(
-    contact =>
-      typeof contact.name === 'string' &&
-      contact.name.toLowerCase().includes(filter.toLowerCase()),
-  );
+  // const filteredContacts = contacts.filter(
+  //   contact =>
+  //     typeof contact.name === 'string' &&
+  //     contact.name.toLowerCase().includes(filter.toLowerCase()),
+  // );
   // console.log(contacts);
   // if (isRefreshing) {
   //   // return <p>Refreshing user...</p>;
@@ -72,7 +72,7 @@ function App() {
       <ContactForm onAddContact={handleAddContact} />
       <SearchBox value={filter} onChange={handleFilterChange} />
       <ContactList onDelete={handleDeleteContact} />
-      <ContactList contacts={filteredContacts} onDelete={handleDeleteContact} />
+      {/* <ContactList contacts={filteredContacts} onDelete={handleDeleteContact} /> */}
       {/* {isRefreshing && <p>Refreshing user ..</p>} */}
     </div>
   ) : (

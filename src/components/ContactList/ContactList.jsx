@@ -27,7 +27,7 @@ const ContactList = ({ onDelete }) => {
         <Contact
           key={contact.id}
           contact={contact}
-          onDelete={() => onDelete(contact.id)}
+          // onDelete={() => onDelete(contact.id)}
           style={{
             marginBottom: '10px',
             border: '1px solid #ccc',
@@ -37,7 +37,7 @@ const ContactList = ({ onDelete }) => {
             alignItems: 'center',
           }}
         >
-          <span>
+          {/* <span>
             {contact.name}: {contact.number}
           </span>
           <button
@@ -52,7 +52,7 @@ const ContactList = ({ onDelete }) => {
             }}
           >
             Delete
-          </button>
+          </button> */}
         </Contact>
       ))}
     </ul>
