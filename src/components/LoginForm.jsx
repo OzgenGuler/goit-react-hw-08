@@ -21,9 +21,12 @@ const LoginForm = () => {
   });
 
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <div style={{ marginBottom: '10px' }}>
-        <label>Email:</label>
+    <form
+      onSubmit={formik.handleSubmit}
+      style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}
+    >
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <label>Email</label>
         <input
           name="email"
           type="email"
@@ -35,8 +38,8 @@ const LoginForm = () => {
         )}
       </div>
 
-      <div style={{ marginBottom: '10px' }}>
-        <label>Password:</label>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <label>Password</label>
         <input
           name="password"
           type="password"

@@ -23,9 +23,12 @@ const RegistrationForm = () => {
   });
 
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <div>
-        <label>Name:</label>
+    <form
+      onSubmit={formik.handleSubmit}
+      style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}
+    >
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <label>Name</label>
         <input
           name="name"
           type="text"
@@ -37,8 +40,8 @@ const RegistrationForm = () => {
         )}
       </div>
 
-      <div>
-        <label>Email:</label>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <label>Email</label>
         <input
           name="email"
           type="email"
@@ -50,8 +53,8 @@ const RegistrationForm = () => {
         )}
       </div>
 
-      <div>
-        <label>Password:</label>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <label>Password</label>
         <input
           name="password"
           type="password"

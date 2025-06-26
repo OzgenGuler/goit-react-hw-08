@@ -1,6 +1,7 @@
 import React from 'react';
 import Contact from '../Contact/Contact';
 import { useSelector } from 'react-redux';
+
 // import { selectContacts } from '../redux/contacts/selectors';
 import { selectFilteredContacts } from '../redux/contacts/selectors';
 // import { selectNameFilter } from '../redux/filters/slice';
@@ -21,28 +22,30 @@ const ContactList = ({ onDelete }) => {
   //     typeof contact.name === 'string' &&
   //     contact.name.toLowerCase().includes(normalizedFilter),
   // // );
+  // console.log('onDelete gelen props:', onDeleteContact);
+
   return (
     <ul style={{ paddingLeft: 0, listStyle: 'none' }}>
       {filteredContacts.map(contact => (
-        <Contact
-          key={contact.id}
-          contact={contact}
-          // onDelete={() => onDelete(contact.id)}
-          style={{
-            marginBottom: '10px',
-            border: '1px solid #ccc',
-            padding: '10px',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-        >
-          {/* <span>
+        <li key={contact.id}>
+          <Contact
+            contact={contact}
+            onDelete={() => onDelete(contact.id)}
+            style={{
+              marginBottom: '10px',
+              border: '1px solid #ccc',
+              padding: '10px',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}
+          >
+            {/* <span>
             {contact.name}: {contact.number}
           </span>
           <button
             type="button"
-            onClick={() => onDelete(contact.id)}
+            onClick={() => onDeleteContact(contact.id)}
             style={{
               backgroundColor: '#ff4d4d',
               color: '#fff',
@@ -53,7 +56,8 @@ const ContactList = ({ onDelete }) => {
           >
             Delete
           </button> */}
-        </Contact>
+          </Contact>
+        </li>
       ))}
     </ul>
   );

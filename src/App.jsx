@@ -7,7 +7,10 @@ import SearchBox from './components/SearchBox/SearchBox';
 import ContactList from './components/ContactList/ContactList';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectContacts } from './components/redux/contacts/selectors';
+import {
+  selectContacts,
+  // selectFilteredContacts,
+} from './components/redux/contacts/selectors';
 import {
   addContact,
   deleteContact,
@@ -50,6 +53,7 @@ function App() {
   };
 
   const handleDeleteContact = id => {
+    console.log('Deleting contact with id:', id);
     dispatch(deleteContact(id));
   };
 
@@ -71,8 +75,10 @@ function App() {
       <h1>Phonebook</h1>
       <ContactForm onAddContact={handleAddContact} />
       <SearchBox value={filter} onChange={handleFilterChange} />
-      <ContactList onDelete={handleDeleteContact} />
-      {/* <ContactList contacts={filteredContacts} onDelete={handleDeleteContact} /> */}
+      <ContactList
+        // contacts={selectFilteredContacts}
+        onDelete={handleDeleteContact}
+      />
       {/* {isRefreshing && <p>Refreshing user ..</p>} */}
     </div>
   ) : (
@@ -99,7 +105,12 @@ function App() {
           path="/contacts"
           element={
             <PrivateRoute redirectTo="/login">
-              <Contacts />
+              <Contacts
+                onAddContact={handleAddContact}
+                // onDeleteContact={handleDeleteContact}
+                onFilterChange={handleFilterChange}
+                filter={filter}
+              />
             </PrivateRoute>
           }
         />

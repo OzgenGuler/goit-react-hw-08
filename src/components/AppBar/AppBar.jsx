@@ -15,11 +15,22 @@ const AppBar = () => {
         gap: '50px',
         alignItems: 'center',
         padding: '20px 40px',
-        backgroundColor: '#f0f0f0',
-        boxShadow: '0 20px 10px #fffff',
+        border: '1px solid #f0f0f0',
+        hover: {
+          boxShadow: '0 20px 10px #f0f0f0',
+          transition: 'box-shadow 0.3s ease-in-out',
+        },
       }}
     >
-      <Navigation />
+      <Navigation
+        style={{
+          hover: {
+            boxShadow: '0 20px 10px #f0f0f0',
+            transition: 'box-shadow 0.3s ease-in-out',
+            transform: 'scale(1.05)',
+          },
+        }}
+      />
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
     </header>
   );
